@@ -50,5 +50,8 @@ You can build the lists as you want them, there are now limits as long as the fi
 - **rare**: only units of type "rare" or "rareelite"
 - **rareelite**: only units of type "rareelite"
 - **worldboss**: only units of type "worldboss"
+- **hostile**: only hostile units
+- **neutral**: only neutral units
+- **friendly**: only friendly units
 
 New filters are easy to implement, if you wish to create your own, please have a look at: [filter.lua](./filter.lua).

@@ -69,4 +69,16 @@ filter.worldboss = function(unit)
   return elite == "worldboss" and true or false
 end
 
+filter.hostile = function(unit)
+  return UnitIsEnemy("player", unit) and true or false
+end
+
+filter.neutral = function(unit)
+  return not UnitIsEnemy("player", unit) and not UnitIsFriend("player", unit) and true or false
+end
+
+filter.friendly = function(unit)
+  return UnitIsFriend("player", unit) and true or false
+end
+
 ShaguScan.filter = filter
