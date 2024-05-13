@@ -53,5 +53,7 @@ You can build the lists as you want them, there are now limits as long as the fi
 - **hostile**: only hostile units
 - **neutral**: only neutral units
 - **friendly**: only friendly units
+- **attack**: only units that can be attacked
+- **noattack**: only units that can't be attacked
 
 New filters are easy to implement, if you wish to create your own, please have a look at: [filter.lua](./filter.lua).

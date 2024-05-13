@@ -81,4 +81,12 @@ filter.friendly = function(unit)
   return UnitIsFriend("player", unit) and true or false
 end
 
+filter.attack = function(unit)
+  return UnitCanAttack("player", unit) and true or false
+end
+
+filter.noattack = function(unit)
+  return not UnitCanAttack("player", unit) and true or false
+end
+
 ShaguScan.filter = filter
