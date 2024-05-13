@@ -1,0 +1,13 @@
+## Interface: 11200
+## Title: |cffffcc00Shagu|cffffffffScan
+## Author: Shagu
+## Notes: Uses SuperWoW GUIDs to show nearby units
+## Version: 1.0
+## SavedVariablesPerCharacter: ShaguScan_db
+
+global.lua
+utils.lua
+settings.lua
+core.lua
+filter.lua
+ui.lua
