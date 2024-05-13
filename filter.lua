@@ -103,4 +103,54 @@ filter.nopet = function(unit)
   return not pet and true or false
 end
 
+filter.human = function(unit)
+  local _, race = UnitRace(unit)
+  return race == "Human" and true or false
+end
+
+filter.orc = function(unit)
+  local _, race = UnitRace(unit)
+  return race == "Orc" and true or false
+end
+
+filter.dwarf = function(unit)
+  local _, race = UnitRace(unit)
+  return race == "Dwarf" and true or false
+end
+
+filter.nightelf = function(unit)
+  local _, race = UnitRace(unit)
+  return race == "NightElf" and true or false
+end
+
+filter.undead = function(unit)
+  local _, race = UnitRace(unit)
+  return race == "Scourge" and true or false
+end
+
+filter.tauren = function(unit)
+  local _, race = UnitRace(unit)
+  return race == "Tauren" and true or false
+end
+
+filter.gnome = function(unit)
+  local _, race = UnitRace(unit)
+  return race == "Gnome" and true or false
+end
+
+filter.troll = function(unit)
+  local _, race = UnitRace(unit)
+  return race == "Troll" and true or false
+end
+
+filter.goblin = function(unit)
+  local _, race = UnitRace(unit)
+  return race == "Goblin" and true or false
+end
+
+filter.highelf = function(unit)
+  local _, race = UnitRace(unit)
+  return race == "BloodElf" and true or false
+end
+
 ShaguScan.filter = filter

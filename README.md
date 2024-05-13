@@ -57,5 +57,15 @@ You can build the lists as you want them, there are now limits as long as the fi
 - **noattack**: only units that can't be attacked
 - **pet**: only units that are pet or totems
 - **nopet**: only units that aren't pets or totems
+- **human**: only human players
+- **orc**: only orc players
+- **dwarf**: only dwarf players
+- **nightelf**: only night elf players
+- **undead**: only scourge players
+- **tauren**: only tauren players
+- **gnome**: only gnome players
+- **troll**: only troll players
+- **goblin**: only goblin players
+- **highelf**: only high elf players
 
-New filters are easy to implement, if you wish to create your own, please have a look at: [filter.lua](./filter.lua).
+New and custom filters are easy to implement, if you wish to create your own, please have a look at: [filter.lua](./filter.lua).
