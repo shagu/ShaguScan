@@ -153,4 +153,68 @@ filter.highelf = function(unit)
   return race == "BloodElf" and true or false
 end
 
+filter.warlock = function(unit)
+  local _, class = UnitClass(unit)
+  local player = UnitIsPlayer(unit)
+
+  return player and class == "WARLOCK" and true or false
+end
+
+filter.warrior = function(unit)
+  local _, class = UnitClass(unit)
+  local player = UnitIsPlayer(unit)
+
+  return player and class == "WARRIOR" and true or false
+end
+
+filter.hunter = function(unit)
+  local _, class = UnitClass(unit)
+  local player = UnitIsPlayer(unit)
+
+  return player and class == "HUNTER" and true or false
+end
+
+filter.mage = function(unit)
+  local _, class = UnitClass(unit)
+  local player = UnitIsPlayer(unit)
+
+  return player and class == "MAGE" and true or false
+end
+
+filter.priest = function(unit)
+  local _, class = UnitClass(unit)
+  local player = UnitIsPlayer(unit)
+
+  return player and class == "PRIEST" and true or false
+end
+
+filter.druid = function(unit)
+  local _, class = UnitClass(unit)
+  local player = UnitIsPlayer(unit)
+
+  return player and class == "DRUID" and true or false
+end
+
+filter.paladin = function(unit)
+  local _, class = UnitClass(unit)
+  local player = UnitIsPlayer(unit)
+
+  return player and class == "PALADIN" and true or false
+end
+
+filter.shaman = function(unit)
+  local _, class = UnitClass(unit)
+  local player = UnitIsPlayer(unit)
+
+  return player and class == "SHAMAN" and true or false
+end
+
+filter.rogue = function(unit)
+  local _, class = UnitClass(unit)
+  local player = UnitIsPlayer(unit)
+
+  return player and class == "ROGUE" and true or false
+end
+
+
 ShaguScan.filter = filter

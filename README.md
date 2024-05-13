@@ -67,5 +67,14 @@ You can build the lists as you want them, there are now limits as long as the fi
 - **troll**: only troll players
 - **goblin**: only goblin players
 - **highelf**: only high elf players
+- **warlock**: only warlock players
+- **warrior**: only warrior players
+- **hunter**: only hunter players
+- **mage**: only mage players
+- **priest**: only priest players
+- **druid**: only druid players
+- **paladin**: only paladin players
+- **shaman**: only shaman players
+- **rogue**: only rogue players
 
 New and custom filters are easy to implement, if you wish to create your own, please have a look at: [filter.lua](./filter.lua).
