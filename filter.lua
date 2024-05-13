@@ -44,4 +44,29 @@ filter.icon = function(unit)
   return GetRaidTargetIndex(unit) and true or false
 end
 
+filter.normal = function(unit)
+  local elite = UnitClassification(unit)
+  return elite == "normal" and true or false
+end
+
+filter.elite = function(unit)
+  local elite = UnitClassification(unit)
+  return (elite == "elite" or elite == "rareelite") and true or false
+end
+
+filter.rare = function(unit)
+  local elite = UnitClassification(unit)
+  return (elite == "rare" or elite == "rareelite") and true or false
+end
+
+filter.rareelite = function(unit)
+  local elite = UnitClassification(unit)
+  return elite == "rareelite" and true or false
+end
+
+filter.worldboss = function(unit)
+  local elite = UnitClassification(unit)
+  return elite == "worldboss" and true or false
+end
+
 ShaguScan.filter = filter

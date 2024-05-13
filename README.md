@@ -7,8 +7,8 @@ It's made for World of Warcraft: Vanilla (1.12.1) and is only tested on [Turtle 
 
 > [!IMPORTANT]
 >
-> **This addon requires you to have [SuperWoW](https://github.com/balakethelock/SuperWoW) installed.** 
-> 
+> **This addon requires you to have [SuperWoW](https://github.com/balakethelock/SuperWoW) installed.**
+>
 > It won't work without it. Really.
 
 ## Installation (Vanilla, 1.12)
@@ -45,5 +45,10 @@ You can build the lists as you want them, there are now limits as long as the fi
 - **pve**: only pve-flagged units
 - **pvp**: only pvp-flagged units
 - **icon**: only units with an assigned raid icon
+- **normal**: only units of type "normal" (no elite, rare, etc.)
+- **elite**: only units of type "elite" or "rareelite"
+- **rare**: only units of type "rare" or "rareelite"
+- **rareelite**: only units of type "rareelite"
+- **worldboss**: only units of type "worldboss"
 
 New filters are easy to implement, if you wish to create your own, please have a look at: [filter.lua](./filter.lua).
