@@ -89,4 +89,18 @@ filter.noattack = function(unit)
   return not UnitCanAttack("player", unit) and true or false
 end
 
+filter.pet = function(unit)
+  local player = UnitIsPlayer(unit) and true or false
+  local controlled = UnitPlayerControlled(unit) and true or false
+  local pet = not player and controlled and true or false
+  return pet and true or false
+end
+
+filter.nopet = function(unit)
+  local player = UnitIsPlayer(unit) and true or false
+  local controlled = UnitPlayerControlled(unit) and true or false
+  local pet = not player and controlled and true or false
+  return not pet and true or false
+end
+
 ShaguScan.filter = filter

@@ -55,5 +55,7 @@ You can build the lists as you want them, there are now limits as long as the fi
 - **friendly**: only friendly units
 - **attack**: only units that can be attacked
 - **noattack**: only units that can't be attacked
+- **pet**: only units that are pet or totems
+- **nopet**: only units that aren't pets or totems
 
 New filters are easy to implement, if you wish to create your own, please have a look at: [filter.lua](./filter.lua).
