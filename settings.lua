@@ -214,6 +214,8 @@ settings.OpenConfig = function(caption)
       { "|cffffffffpve", "PvE Units" },
       { "|cffffffffpvp", "PvP Enabled Units" },
       { "|cfffffffficon", "Units With Raid Icons" },
+      " ",
+      "|cffffffffA complete list of filters can be found in the README."
     })
   end)
 
