@@ -1,3 +1,5 @@
+if ShaguScan.disabled then return end
+
 local core = CreateFrame("Frame", nil, WorldFrame)
 
 core.guids = {}

@@ -1,3 +1,5 @@
+if ShaguScan.disabled then return end
+
 local utils = ShaguScan.utils
 local filter = ShaguScan.filter
 local settings = ShaguScan.settings

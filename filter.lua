@@ -1,3 +1,5 @@
+if ShaguScan.disabled then return end
+
 local filter = { }
 
 filter.player = function(unit)

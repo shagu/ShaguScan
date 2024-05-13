@@ -1,3 +1,5 @@
+if ShaguScan.disabled then return end
+
 local utils = ShaguScan.utils
 
 local settings = {}
