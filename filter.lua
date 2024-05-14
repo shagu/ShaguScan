@@ -31,7 +31,7 @@ filter.alliance = function(unit)
 end
 
 filter.hardcore = function(unit)
-  return string.find(UnitPVPName(unit), "Still Alive") and true or false
+  return string.find((UnitPVPName(unit) or ""), "Still Alive") and true or false
 end
 
 filter.pve = function(unit)
