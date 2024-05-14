@@ -226,4 +226,8 @@ filter.noaggro = function(unit)
   return not UnitExists(unit .. "target") or not UnitIsUnit(unit .. "target", "player") and true or false
 end
 
+filter.pfquest = function(unit)
+  return pfQuest and pfMap and UnitName(unit) and pfMap.tooltips[UnitName(unit)] and true or false
+end
+
 ShaguScan.filter = filter
