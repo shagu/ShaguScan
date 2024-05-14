@@ -78,5 +78,7 @@ You can build the lists as you want them, there are now limits as long as the fi
 - **paladin**: only paladin players
 - **shaman**: only shaman players
 - **rogue**: only rogue players
+- **aggro**: units that target you
+- **noaggro**: units that don't target you
 
 New and custom filters are easy to implement, if you wish to create your own, please have a look at: [filter.lua](./filter.lua).

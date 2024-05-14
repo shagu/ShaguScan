@@ -218,5 +218,12 @@ filter.rogue = function(unit)
   return player and class == "ROGUE" and true or false
 end
 
+filter.aggro = function(unit)
+  return UnitExists(unit .. "target") and UnitIsUnit(unit .. "target", "player") and true or false
+end
+
+filter.noaggro = function(unit)
+  return not UnitExists(unit .. "target") or not UnitIsUnit(unit .. "target", "player") and true or false
+end
 
 ShaguScan.filter = filter
