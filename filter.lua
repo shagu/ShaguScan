@@ -230,4 +230,8 @@ filter.pfquest = function(unit)
   return pfQuest and pfMap and UnitName(unit) and pfMap.tooltips[UnitName(unit)] and true or false
 end
 
+filter.range = function(unit)
+  return CheckInteractDistance(unit, 4) and true or false
+end
+
 ShaguScan.filter = filter
