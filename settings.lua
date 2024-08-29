@@ -1,13 +1,14 @@
 if ShaguScan.disabled then return end
 
 local utils = ShaguScan.utils
+local T = ShaguScan.T
 
 local settings = {}
 
 SLASH_SHAGUSCAN1, SLASH_SHAGUSCAN2, SLASH_SHAGUSCAN3 = "/scan", "/sscan", "/shaguscan"
 
 SlashCmdList["SHAGUSCAN"] = function(input)
-  local caption = input and input ~= '' and input or "Scanner"
+  local caption = input and input ~= '' and input or T["Scanner"]
   settings.OpenConfig(caption)
 end
 
@@ -119,7 +120,7 @@ settings.OpenConfig = function(caption)
   dialog.save:SetHeight(18)
   dialog.save:SetFont(STANDARD_TEXT_FONT, 10)
   dialog.save:SetPoint("BOTTOMRIGHT", dialog, "BOTTOMRIGHT", -8, 8)
-  dialog.save:SetText("Save")
+  dialog.save:SetText(T["Save"])
   dialog.save:SetScript("OnClick", function()
     local new_caption = dialog.caption:GetText()
 
@@ -157,7 +158,7 @@ settings.OpenConfig = function(caption)
   dialog.delete:SetHeight(18)
   dialog.delete:SetFont(STANDARD_TEXT_FONT, 10)
   dialog.delete:SetPoint("BOTTOMLEFT", dialog, "BOTTOMLEFT", 8, 8)
-  dialog.delete:SetText("Delete")
+  dialog.delete:SetText(T["Delete"])
   dialog.delete:SetScript("OnClick", function()
     ShaguScan_db.config[caption] = nil
     this:GetParent():Hide()
@@ -194,7 +195,7 @@ settings.OpenConfig = function(caption)
   backdrop.pos = 8
 
   -- Filter
-  local caption = backdrop:CreateLabel("Filter:")
+  local caption = backdrop:CreateLabel(T["Filter:"])
   caption:SetPoint("TOPLEFT", backdrop, 10, -backdrop.pos)
 
   dialog.filter = backdrop:CreateTextBox(config.filter)
@@ -202,22 +203,22 @@ settings.OpenConfig = function(caption)
   dialog.filter:SetPoint("TOPRIGHT", backdrop, "TOPRIGHT", -8, -backdrop.pos)
   dialog.filter:SetScript("OnEnter", function()
     dialog.filter:ShowTooltip({
-      "Unit Filters",
-      "|cffaaaaaaA comma separated list of filters.",
+      T["Unit Filters"],
+      "|cffaaaaaa" .. T["A comma separated list of filters."],
       " ",
-      { "|cffffffffplayer", "Player Characters" },
-      { "|cffffffffnpc", "NPC Units" },
-      { "|cffffffffinfight", "Infight Units" },
-      { "|cffffffffdead", "Dead Units" },
-      { "|cffffffffalive", "Living Units" },
-      { "|cffffffffhorde", "Horde Units" },
-      { "|cffffffffalliance", "Alliance Units" },
-      { "|cffffffffhardcore", "Hardcore Players" },
-      { "|cffffffffpve", "PvE Units" },
-      { "|cffffffffpvp", "PvP Enabled Units" },
-      { "|cfffffffficon", "Units With Raid Icons" },
+      { "|cffffffffplayer", T["Player Characters"] },
+      { "|cffffffffnpc", T["NPC Units"] },
+      { "|cffffffffinfight", T["Infight Units"] },
+      { "|cffffffffdead", T["Dead Units"] },
+      { "|cffffffffalive", T["Living Units"] },
+      { "|cffffffffhorde", T["Horde Units"] },
+      { "|cffffffffalliance", T["Alliance Units"] },
+      { "|cffffffffhardcore", T["Hardcore Players"] },
+      { "|cffffffffpve", T["PvE Units"] },
+      { "|cffffffffpvp", T["PvP Enabled Units"] },
+      { "|cfffffffficon", T["Units With Raid Icons"] },
       " ",
-      "|cffffffffA complete list of filters can be found in the README."
+      "|cffffffff" .. T["A complete list of filters can be found in the README."]
     })
   end)
 
@@ -231,7 +232,7 @@ settings.OpenConfig = function(caption)
   backdrop.pos = backdrop.pos + 9
 
   -- Width
-  local caption = backdrop:CreateLabel("Width:")
+  local caption = backdrop:CreateLabel(T["Width:"])
   caption:SetPoint("TOPLEFT", backdrop, 10, -backdrop.pos)
 
   dialog.width = backdrop:CreateTextBox(config.width)
@@ -239,8 +240,8 @@ settings.OpenConfig = function(caption)
   dialog.width:SetPoint("TOPRIGHT", backdrop, "TOPRIGHT", -8, -backdrop.pos)
   dialog.width:SetScript("OnEnter", function()
     dialog.width:ShowTooltip({
-      "Health Bar Width",
-      "|cffaaaaaaAn Integer Value in Pixels"
+      T["Health Bar Width"],
+      "|cffaaaaaa" .. T["An Integer Value in Pixels"]
     })
   end)
 
@@ -250,7 +251,7 @@ settings.OpenConfig = function(caption)
   backdrop.pos = backdrop.pos + 18
 
   -- Height
-  local caption = backdrop:CreateLabel("Height:")
+  local caption = backdrop:CreateLabel(T["Height:"])
   caption:SetPoint("TOPLEFT", backdrop, 10, -backdrop.pos)
 
   dialog.height = backdrop:CreateTextBox(config.height)
@@ -258,8 +259,8 @@ settings.OpenConfig = function(caption)
   dialog.height:SetPoint("TOPRIGHT", backdrop, "TOPRIGHT", -8, -backdrop.pos)
   dialog.height:SetScript("OnEnter", function()
     dialog.height:ShowTooltip({
-      "Health Bar Height",
-      "|cffaaaaaaAn Integer Value in Pixels"
+      T["Health Bar Height"],
+      "|cffaaaaaa" .. T["An Integer Value in Pixels"]
     })
   end)
 
@@ -270,7 +271,7 @@ settings.OpenConfig = function(caption)
   backdrop.pos = backdrop.pos + 18
 
   -- Spacing
-  local caption = backdrop:CreateLabel("Spacing:")
+  local caption = backdrop:CreateLabel(T["Spacing:"])
   caption:SetPoint("TOPLEFT", backdrop, 10, -backdrop.pos)
 
   dialog.spacing = backdrop:CreateTextBox(config.spacing)
@@ -278,8 +279,8 @@ settings.OpenConfig = function(caption)
   dialog.spacing:SetPoint("TOPRIGHT", backdrop, "TOPRIGHT", -8, -backdrop.pos)
   dialog.spacing:SetScript("OnEnter", function()
     dialog.spacing:ShowTooltip({
-      "Spacing Between Health Bars",
-      "|cffaaaaaaAn Integer Value in Pixels"
+      T["Spacing Between Health Bars"],
+      "|cffaaaaaa" .. T["An Integer Value in Pixels"]
     })
   end)
 
@@ -290,7 +291,7 @@ settings.OpenConfig = function(caption)
   backdrop.pos = backdrop.pos + 18
 
   -- Max per Row
-  local caption = backdrop:CreateLabel("Max-Row:")
+  local caption = backdrop:CreateLabel(T["Max-Row:"])
   caption:SetPoint("TOPLEFT", backdrop, 10, -backdrop.pos)
 
   dialog.maxrow = backdrop:CreateTextBox(config.maxrow)
@@ -298,8 +299,8 @@ settings.OpenConfig = function(caption)
   dialog.maxrow:SetPoint("TOPRIGHT", backdrop, "TOPRIGHT", -8, -backdrop.pos)
   dialog.maxrow:SetScript("OnEnter", function()
     dialog.maxrow:ShowTooltip({
-      "Maximum Entries Per Column",
-      "|cffaaaaaaA new column will be created once exceeded"
+      T["Maximum Entries Per Column"],
+      "|cffaaaaaa" .. T["A new column will be created once exceeded"]
     })
   end)
 
@@ -313,7 +314,7 @@ settings.OpenConfig = function(caption)
   backdrop.pos = backdrop.pos + 9
 
   -- Anchor
-  local caption = backdrop:CreateLabel("Anchor:")
+  local caption = backdrop:CreateLabel(T["Anchor:"])
   caption:SetPoint("TOPLEFT", backdrop, 10, -backdrop.pos)
 
   dialog.anchor = backdrop:CreateTextBox(config.anchor)
@@ -321,8 +322,8 @@ settings.OpenConfig = function(caption)
   dialog.anchor:SetPoint("TOPRIGHT", backdrop, "TOPRIGHT", -8, -backdrop.pos)
   dialog.anchor:SetScript("OnEnter", function()
     dialog.anchor:ShowTooltip({
-      "Window Anchor",
-      "|cffaaaaaaThe Anchor From Where Positions Are Calculated.",
+      T["Window Anchor"],
+      "|cffaaaaaa" .. T["The Anchor From Where Positions Are Calculated."],
       " ",
       {"TOP", "TOPLEFT"},
       {"TOPRIGHT", "CENTER"},
@@ -339,7 +340,7 @@ settings.OpenConfig = function(caption)
   backdrop.pos = backdrop.pos + 18
 
   -- Scale
-  local caption = backdrop:CreateLabel("Scale:")
+  local caption = backdrop:CreateLabel(T["Scale:"])
   caption:SetPoint("TOPLEFT", backdrop, 10, -backdrop.pos)
 
   dialog.scale = backdrop:CreateTextBox(utils.round(config.scale, 2))
@@ -347,8 +348,8 @@ settings.OpenConfig = function(caption)
   dialog.scale:SetPoint("TOPRIGHT", backdrop, "TOPRIGHT", -8, -backdrop.pos)
   dialog.scale:SetScript("OnEnter", function()
     dialog.scale:ShowTooltip({
-      "Window Scale",
-      "|cffaaaaaaA floating point number, 1 equals 100%"
+      T["Window Scale"],
+      "|cffaaaaaa" .. T["A floating point number, 1 equals 100%"]
     })
   end)
 
@@ -359,7 +360,7 @@ settings.OpenConfig = function(caption)
   backdrop.pos = backdrop.pos + 18
 
   -- Position-X
-  local caption = backdrop:CreateLabel("X-Position:")
+  local caption = backdrop:CreateLabel(T["X-Position:"])
   caption:SetPoint("TOPLEFT", backdrop, 10, -backdrop.pos)
 
   dialog.x = backdrop:CreateTextBox(utils.round(config.x, 2))
@@ -367,8 +368,8 @@ settings.OpenConfig = function(caption)
   dialog.x:SetPoint("TOPRIGHT", backdrop, "TOPRIGHT", -8, -backdrop.pos)
   dialog.x:SetScript("OnEnter", function()
     dialog.x:ShowTooltip({
-      "X-Position of Window",
-      "|cffaaaaaaA Number in Pixels"
+      T["X-Position of Window"],
+      "|cffaaaaaa" .. T["A Number in Pixels"]
     })
   end)
 
@@ -379,7 +380,7 @@ settings.OpenConfig = function(caption)
   backdrop.pos = backdrop.pos + 18
 
   -- Position-Y
-  local caption = backdrop:CreateLabel("Y-Position:")
+  local caption = backdrop:CreateLabel(T["Y-Position:"])
   caption:SetPoint("TOPLEFT", backdrop, 10, -backdrop.pos)
 
   dialog.y = backdrop:CreateTextBox(utils.round(config.y, 2))
@@ -387,8 +388,8 @@ settings.OpenConfig = function(caption)
   dialog.y:SetPoint("TOPRIGHT", backdrop, "TOPRIGHT", -8, -backdrop.pos)
   dialog.y:SetScript("OnEnter", function()
     dialog.y:ShowTooltip({
-      "Y-Position of Window",
-      "|cffaaaaaaA Number in Pixels"
+      T["Y-Position of Window"],
+      "|cffaaaaaa" .. T["A Number in Pixels"]
     })
   end)
 

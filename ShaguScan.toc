@@ -2,9 +2,15 @@
 ## Title: |cffffcc00Shagu|cffffffffScan
 ## Author: Shagu
 ## Notes: Uses SuperWoW GUIDs to show nearby units
+## Notes-ruRU: Использует GUID SuperWoW для отображения ближайших юнитов.
 ## Version: 1.0
 ## SavedVariablesPerCharacter: ShaguScan_db
 
+# locales
+locales\translations_enUS.lua
+locales\translations_ruRU.lua
+
+# basic
 global.lua
 utils.lua
 settings.lua
