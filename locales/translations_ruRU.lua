@@ -38,9 +38,9 @@ ShaguScan_translation["ruRU"] = {
   ["Scale:"] = "Масштаб:",
   ["Window Scale"] = "Масштаб окна",
   ["A floating point number, 1 equals 100%"] = "Число с плавающей запятой, 1 равно 100%.",
-  ["X-Position:"] = "Позиция по горизонтали",
+  ["X-Position:"] = "Гор. позиция",
   ["X-Position of Window"] = "Положение окна по горизонтали",
   ["A Number in Pixels"] = "Число в пикселях",
-  ["Y-Position:"] = "Позиция по вертикали",
+  ["Y-Position:"] = "Вер. позиция",
   ["Y-Position of Window"] = "Положение окна по вертикали",
 }
