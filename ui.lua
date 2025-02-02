@@ -274,7 +274,16 @@ ui:SetScript("OnUpdate", function()
 
     -- update filter if required
     if not root.filter_conf or root.filter_conf ~= config.filter then
-      root.filter = { utils.strsplit(',', config.filter) }
+      root.filter = {}
+
+      -- prepare all filter texts
+      local filter_texts = { utils.strsplit(',', config.filter) }
+      for id, filter_text in pairs(filter_texts) do
+        local name, args = utils.strsplit(':', filter_text)
+        root.filter[name] = args or true
+      end
+
+      -- mark current state of data
       root.filter_conf = config.filter
     end
 
@@ -285,9 +294,9 @@ ui:SetScript("OnUpdate", function()
     for guid, time in pairs(ShaguScan.core.guids) do
       -- apply filters
       local visible = true
-      for id, filter_name in pairs(root.filter) do
-        if filter[filter_name] then
-          visible = visible and filter[filter_name](guid)
+      for name, args in pairs(root.filter) do
+        if filter[name] then
+          visible = visible and filter[name](guid, args)
         end
       end
 
