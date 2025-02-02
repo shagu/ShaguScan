@@ -235,6 +235,12 @@ filter.range = function(unit)
 end
 
 local level = nil
+filter.level = function(unit, args)
+  level = tonumber(args)
+  return level and UnitLevel(unit) == level and true or false
+end
+
+local level = nil
 filter.minlevel = function(unit, args)
   level = tonumber(args)
   return level and UnitLevel(unit) >= level and true or false
