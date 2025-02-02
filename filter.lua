@@ -234,4 +234,16 @@ filter.range = function(unit)
   return CheckInteractDistance(unit, 4) and true or false
 end
 
+local level = nil
+filter.minlevel = function(unit, args)
+  level = tonumber(args)
+  return level and UnitLevel(unit) >= level and true or false
+end
+
+local level = nil
+filter.maxlevel = function(unit, args)
+  level = tonumber(args)
+  return level and UnitLevel(unit) <= level and true or false
+end
+
 ShaguScan.filter = filter

@@ -82,5 +82,7 @@ You can build the lists as you want them, there are now limits as long as the fi
 - **noaggro**: units that don't target you
 - **pfquest**: units that have a pfquest tooltip
 - **range**: units that are within max [interaction distance](https://wowwiki-archive.fandom.com/wiki/API_CheckInteractDistance) (28y)
+- **minlevel:NUMBER**: units that are at least level NUMBER
+- **maxlevel:NUMBER**: units that are at most level NUMBER
 
 New and custom filters are easy to implement, if you wish to create your own, please have a look at: [filter.lua](./filter.lua).
