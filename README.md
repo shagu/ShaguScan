@@ -85,5 +85,6 @@ You can build the lists as you want them, there are now limits as long as the fi
 - **level:NUMBER**: units that are level NUMBER
 - **minlevel:NUMBER**: units that are at least level NUMBER
 - **maxlevel:NUMBER**: units that are at most level NUMBER
+- **name:STRING**: units that have STRING in their name
 
 New and custom filters are easy to implement, if you wish to create your own, please have a look at: [filter.lua](./filter.lua).

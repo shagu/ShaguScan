@@ -252,4 +252,10 @@ filter.maxlevel = function(unit, args)
   return level and UnitLevel(unit) <= level and true or false
 end
 
+filter.name = function(unit, name)
+  name = strlower(name or "")
+  unit = strlower(UnitName(unit) or "")
+  return string.find(unit, name) and true or false
+end
+
 ShaguScan.filter = filter
